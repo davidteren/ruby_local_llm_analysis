@@ -151,6 +151,9 @@ def main():
     - **MultiPL-T StarCoderBase** (726.93 MB): A lightweight model focused on programming tasks
     """)
 
+    st.markdown("""
+    > More models coming soon...
+    """)
 
     # Load test results
     json_files = glob.glob('*.json')
