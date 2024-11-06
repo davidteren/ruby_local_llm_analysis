@@ -55,8 +55,37 @@ def create_quality_df(quality_scores):
 
 def main():
     st.set_page_config(page_title="LLM Local Model Analysis - 💎Ruby Test Results 💎", layout="wide")
+
+    st.markdown("""
+    # LLM Local Model Analysis - 💎 Ruby Test Results
     
-    st.title("LLM Local Model Analysis - 💎 Ruby Test Results 💎")
+    This dashboard analyzes the performance and accuracy of local LLM models in understanding and generating Ruby programming code. The analysis is based on a test suite of 5 key Ruby programming concepts:
+    
+    1. **Basic Ruby Understanding**: Tests comprehension of fundamental Ruby concepts like modules
+    2. **Code Implementation**: Evaluates ability to write functional Ruby classes and methods
+    3. **Error Handling**: Assesses understanding of Ruby's error handling mechanisms
+    4. **Ruby Best Practices**: Tests knowledge of Ruby naming conventions and best practices
+    5. **Advanced Ruby Features**: Evaluates handling of complex features like blocks, procs, and lambdas
+    
+    ### Accuracy Analysis Methodology:
+    Each response is evaluated on a 10-point scale based on:
+    - Technical accuracy of the content
+    - Completeness of the explanation
+    - Code correctness and style
+    - Proper use of Ruby idioms
+    - Error handling and edge cases
+    
+    The scores reflect:
+    - 9-10: Production-ready, comprehensive response
+    - 7-8: Good understanding with minor issues
+    - 5-6: Basic understanding with some gaps
+    - 3-4: Significant misunderstandings
+    - 1-2: Major conceptual errors
+    
+    ### Models Compared:
+    - **Mistral Nemo Instruct** (6.91 GB): A larger model optimized for instruction following
+    - **MultiPL-T StarCoderBase** (726.93 MB): A lightweight model focused on programming tasks
+    """)
     
     # Load test results
     json_files = glob.glob('*.json')
