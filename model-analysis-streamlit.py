@@ -102,17 +102,11 @@ def main():
     st.markdown("# 💎 RubyMojo - Local LLM Benchmarks")
 
     st.markdown("""
-    This dashboard analyzes the performance and accuracy of local LLM models in understanding and generating Ruby programming code. 
-    The analysis is based on a test suite of 5 key Ruby programming concepts.
+    > This dashboard analyzes the performance and accuracy of local LLM models in understanding and generating Ruby programming code. 
+    >
+    > The analysis is based on a test suite of 5 key Ruby programming concepts.
     """)
 
-    # Environment Info
-    st.markdown("""
-    > 🖥️ Test Environment: LM Studio on MacBook Pro (2023)
-    > - Apple M2 Pro chip
-    > - 16 GB Memory
-    > - macOS Sonoma 14.4.1
-    """)
 
     # Test Categories
     st.markdown("""
@@ -142,12 +136,21 @@ def main():
     - 1-2: Major conceptual errors
     """)
 
+    # Environment Info
+    st.markdown("""
+    > 🖥️ Test Environment: LM Studio on MacBook Pro (2023)
+    > - Apple M2 Pro chip
+    > - 16 GB Memory
+    > - macOS Sonoma 14.4.1
+    """)
+
     # Models Compared
     st.markdown("""
     ### Models Compared:
     - **Mistral Nemo Instruct** (6.91 GB): A larger model optimized for instruction following
     - **MultiPL-T StarCoderBase** (726.93 MB): A lightweight model focused on programming tasks
     """)
+
 
     # Load test results
     json_files = glob.glob('*.json')
