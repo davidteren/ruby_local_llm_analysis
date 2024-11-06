@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "timestamp": "2024-11-06T16:01:11.836470",
+    "test_version": "1.0",
+    "total_tests": 5,
+    "total_tokens_used": 2538,
+    "total_time_taken": 19.841185331344604,
+    "server": {
+      "url": "http://localhost:1234/v1",
+      "timeout": 60
+    },
+    "model": {
+      "identifier": "nuprl_-_multipl-t-starcoderbase_1b",
+      "type": "LLM",
+      "path": "RichardErkhov/nuprl_-_MultiPL-T-StarCoderBase_1b-gguf/MultiPL-T-StarCoderBase_1b.Q4_0.gguf",
+      "size": "726.93 MB",
+      "architecture": "StarCoder"
+    },
+    "system": {
+      "os": "Darwin",
+      "os_version": "Darwin Kernel Version 23.4.0: Fri Mar 15 00:12:49 PDT 2024; root:xnu-10063.101.17~1/RELEASE_ARM64_T6020",
+      "python_version": "3.12.7",
+      "cpu_count": 10,
+      "memory_total": 17179869184,
+      "memory_available": 2805334016
+    }
+  },
+  "tests": [
+    {
+      "test_name": "Basic Ruby Understanding",
+      "prompt": "Explain how a Ruby module works and when you should use one.",
+      "response": "\nA typical Ruby module has the following structure:\n\n* A class named Module that represents the module. It contains methods to be used by other classes.\n* There are three types of classes in modules: Class, Module and Object. A class is a user-defined object type. \nClasses are used extensively in programming languages. They group related functionality into modules.\n* Objects in Ruby have attributes and methods that describe them.\nObjects can be instantiated by calling their method (or constructor).\nFor instance, we could create an instance of the module Class by invoking its #new method (the constructor):\n\n> class_object = Class.new\n\nWe could also invoke the Class#new method:\n\n> class_object = Class.new\n\nThe last statement creates a new object of the class Class and assigns it to the variable class_object.\n\nIn contrast, modules do not have constructors. Rather, they contain methods that are available to all objects in the module.\n\nIn order to invoke a method (or function) from inside a class, we use the call operator:\n\n> class_object.method1\n\nThis will invoke the #method1 method of the class Class and pass it the object instance as an argument.\n\nA module defines several methods that are used by all objects in the module. For example, a module might contain a method that determines if two objects are identical:\n\n> class_object.equal? other_class_object\n\nWhen we create an object of a class that is derived from a module, these methods become available to it (by calling them).\n\nIn the following code, we will define a module called Math and then use it in a class. As you can see, we can invoke methods of modules that are defined elsewhere in the program:\n\n> module Math\n  # This method returns the sum of two numbers\n  def +(a, b)\n    return a+b\n  end\n\n  # This method returns the difference of two numbers\n  def -(a, b)\n    return a-b\n  end\nend\n\n> class Calculation \n  include Math # Include the Math module\n\n  attr_accessor :num1 # The first number to be operated on\n  attr_accessor :num2 # The second number to be operated on\n  attr_accessor :operation # The operation to perform (add, subtract or multiply)\n\n  def initialize(n1, n2, ope)\n    @num1 = n1\n    @num2 = n2\n    @operation = ope\n  end\n\n  # This method performs the actual operation based on the operator and numbers attributes\n  def perform\n    case @operation\n      when \"add\"\n        return self.class.+(self.num1, self.num2)\n      when \"sub\"\n        return self.class.-(self.num1, self.num2)\n      when \"mul\"\n        return self.class.*(self.num1, self.num2)\n    end\n  end\nend\n\n\n> calculation = Calculation.new(5, 4, \"add\")\n> calculation.perform # This will invoke the method (+) of the Math module and pass it the first number (5), second number (4) and an operator (add).\n10\n\n\n",
+      "status": "success",
+      "attempts": 1,
+      "timestamp": "2024-11-06 16:00:57",
+      "tokens": {
+        "prompt_tokens": 23,
+        "completion_tokens": 688,
+        "total_tokens": 711
+      },
+      "time_taken": 5.544903993606567
+    },
+    {
+      "test_name": "Code Implementation",
+      "prompt": "Write a simple Ruby class for a BankAccount with methods for deposit and withdrawal.",
+      "response": "\n```ruby\nclass BankAccount\n  def initialize(balance)\n    @balance = balance\n  end\n\n  def deposit(amount)\n    @balance += amount\n  end\n\n  def withdraw(amount)\n    if (@balance >= amount)\n      @balance -= amount\n      return true\n    else\n      return false\n    end\n  end\nend\n```\n\n\n",
+      "status": "success",
+      "attempts": 1,
+      "timestamp": "2024-11-06 16:00:57",
+      "tokens": {
+        "prompt_tokens": 27,
+        "completion_tokens": 68,
+        "total_tokens": 95
+      },
+      "time_taken": 0.5233991146087646
+    },
+    {
+      "test_name": "Error Handling",
+      "prompt": "Show how to implement error handling in Ruby using begin/rescue blocks.",
+      "response": "Begin/rescue block is a way of doing things like:\n- What do you expect will happen if the code underneath it doesn't work?\n- Do you want to execute additional code when the exception happens, or would you rather let the program run normally after this exception?\n\nIn this case, if an error occurs, we want to display an error message (in this case, \"Invalid operation\") and then exit the program.\n",
+      "status": "success",
+      "attempts": 1,
+      "timestamp": "2024-11-06 16:00:58",
+      "tokens": {
+        "prompt_tokens": 25,
+        "completion_tokens": 93,
+        "total_tokens": 118
+      },
+      "time_taken": 0.7026340961456299
+    },
+    {
+      "test_name": "Ruby Best Practices",
+      "prompt": "Explain Ruby naming conventions and best practices for method and variable naming.",
+      "response": "Ruby uses UpperCamelCase for class names, lower_case_with_underscores for instance variables, \nand then hyphen-delimited words for method names.\n\nMethod names should begin with an upper case letter, and all other methods should use underscores to separate \nwords (lowercase without underscores is still valid).\n\nExamples of good method naming:\ncreate_account\nget_item_details\nprocess_transaction\n\nExample of bad method naming:\ncreate_acc\nGetItemDetails\nProcesssTranasaction\n\nNote that the naming conventions are not final and can be changed without changing their semantics.",
+      "status": "success",
+      "attempts": 1,
+      "timestamp": "2024-11-06 16:00:59",
+      "tokens": {
+        "prompt_tokens": 23,
+        "completion_tokens": 134,
+        "total_tokens": 157
+      },
+      "time_taken": 1.0067172050476074
+    },
+    {
+      "test_name": "Advanced Ruby Features",
+      "prompt": "Demonstrate the use of Ruby blocks, procs, and lambdas with examples.",
+      "response": "~~~ruby\n# Block (no parameters)\n[1 2 3].each {|x| puts x }\n> 1\n> 2\n> 3\n\n# Proc (no parameters)\n(lambda() {puts \"Hello World!\"})()\n> Hello World!\n\n# Lambdas with no expressions\n((lambda() 5)+4)(3)\n> 10\n\n((lambda x (x+x)) 5)(3)\n> 8\n\n(((lambda x y (+ x y)) (* 2 3)) 5 7)\n> 56\n\n # Block with one parameter\n[1, 2, 3].each {|x| puts x }\n> 1 2 3\n\n# Proc with one parameter\n(lambda(x) {puts x})(2)\n> 2\n\n# Lambdas with one expression\n((lambda (x) (+ x 5)) 3)\n> 8\n\n # Block with two parameters\n[1, 2, 3].each {|x,y| puts \"#{x} #{y}\" }\n> 1 2 3\n\n# Proc with two parameters\n(lambda(x, y) {puts \"#{x} #{y}\"})(2, 3)\n> 2 3\n\n# Lambdas with two expressions\n((lambda (x y) (+ x y)) 5 7)\n> 12\n\n # Block with three parameters\n[1, 2, 3].each {|x,y,z| puts \"#{x} #{y} #{z}\" }\n> 1 2 3\n\n# Proc with three parameters\n(lambda(x, y, z) {puts \"#{x} #{y} #{z}\"})(2, 3, 4)\n> 2 3 4\n\n # Lambdas with three expressions\n((lambda (x y z) (+ x y z)) 5 7 11)\n> 22\n\n # Block with four parameters\n[1, 2, 3].each {|x,y,z,a| puts \"#{x} #{y} #{z} #{a}\" }\n> 1 2 3\n\n# Proc with four parameters\n(lambda(x, y, z, a) {puts \"#{x} #{y} #{z} #{a}\"})(2, 3, 4, 5)\n> 2 3 4 5\n\n # Lambdas with four expressions\n((lambda (x y z a) (+ x y z a)) 5 7 11 13)\n> 30\n# Block and proc combined\n[1, 2, 3].each {|x| puts \"#{x} \" if x.even? }\n> 1 3\n\n # Lambdas with two expressions and proc\n((lambda (x) (if x then x else x+5)) 5)\n> 7\n((lambda(x) (if x then x else x+5))(4))\n> 8\n\n# The block form is more concise\n[1, 2, 3].each {|x| if x.even? {puts x} end }\n> 1 3\n\n # Procedures\n(define(p number)\n  (if (= number 0)\n      1\n      (+ 1 (* number (p (- number 1))))))\n(p 4)\n> 24\n\n# The procedure form is more concise\n((lambda(number)\n   (if (= number 0)\n       1\n      (+ 1 (* number (p (- number 1))))))\n 4)\n> 24\n\n # Lambda with one parameter and block\n((lambda (x) (puts x))(5))\n> 5\n\n# The lambda form is more concise\n(lambda (x) (puts x))(5)\n> 5\n\n# Combining blocks and procs\n((lambda(x) (puts x))(3)\n> 3\n(p 4)\n> 24\n\n # Procedures with multiple parameters\n(define(add-numbers a b c)\n  (+ (* a b) (* c d)))\n(define(sub-numbers a b c)\n  (- (* a b) (* c d)))\n(define(mult-numbers a b c)\n  (* a b))\n(define(div-numbers a b c)\n  (/ a b))\n(add-numbers 10 20 30)\n> 60\n(sub-numbers 10 20 30)\n> -30\n(mult-numbers 10 20 30)\n> 70\n(div-numbers 10 20 30)\n> 0.333333333333333333333  # not accurate, but close enough...\n\n# The procedure form is more concise\n(define(add-numbers a b c)\n  (if (= 0 a)\n      0\n      (+ (* a b) (* c d))))\n(define(sub-numbers a b c)\n  (if (= a 0)\n       0\n      (- (* a b) (* c d))))\n(define(mult-numbers a b c)\n  (if (= b 0)\n        0\n      (* a b)))\n(define(div-numbers a b c)\n  (if (= b 0)\n        0\n      (/ a b)))\n(add-numbers 10 20 30)\n> 60\n(sub-numbers 10 20 30)\n> -30\n(mult-numbers 10 20 30)\n> 70\n(div-numbers 10 20 30)\n> 0.3333333333333333333333  # not accurate, but close enough...\n\n\n# Lambda with one parameter and proc\n((lambda (x) (+ x 5))(7))\n> 12\n~~~\n\n## Summary\nProcedures are blocks of code that perform a single task. They can have multiple parameters as well.\n\nLambdas are blocks of code that do not contain any expressions, but only one expression body. They can take one or more arguments.\n\nThe block form is more concise than the procedure form. Procedures usually begin with an if statement and then some code, while the block form starts with puts x (and does so without adding an additional if statement)\n",
+      "status": "success",
+      "attempts": 1,
+      "timestamp": "2024-11-06 16:01:11",
+      "tokens": {
+        "prompt_tokens": 28,
+        "completion_tokens": 1429,
+        "total_tokens": 1457
+      },
+      "time_taken": 12.063530921936035
+    }
+  ]
+}

@@ -54,16 +54,16 @@ def create_quality_df(quality_scores):
     return pd.DataFrame(quality_data)
 
 def main():
-    st.set_page_config(page_title="LLM Model Analysis", layout="wide")
+    st.set_page_config(page_title="LLM Local Model Analysis - 💎Ruby Test Results 💎", layout="wide")
     
-    st.title("LLM Model Analysis Dashboard")
+    st.title("LLM Local Model Analysis - 💎 Ruby Test Results 💎")
     
     # Load test results
     json_files = glob.glob('*.json')
     if not json_files:
         st.error("No JSON result files found in the current directory.")
         return
-        
+
     results = load_test_results(json_files)
     performance_df = create_performance_df(results)
     quality_df = create_quality_df(get_quality_scores())
