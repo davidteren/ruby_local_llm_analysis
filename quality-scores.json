@@ -1,0 +1,78 @@
+{
+  "Basic Ruby Understanding": {
+    "mistral-nemo-instruct-2407": 9,
+    "nuprl_-_multipl-t-starcoderbase_1b": 5,
+    "qwen2.5-coder-7b-instruct": 8,
+    "smollm2-360m-instruct": 6
+  },
+  "Code Implementation": {
+    "mistral-nemo-instruct-2407": 9,
+    "nuprl_-_multipl-t-starcoderbase_1b": 4,
+    "qwen2.5-coder-7b-instruct": 8,
+    "smollm2-360m-instruct": 5
+  },
+  "Error Handling": {
+    "mistral-nemo-instruct-2407": 9,
+    "nuprl_-_multipl-t-starcoderbase_1b": 2,
+    "qwen2.5-coder-7b-instruct": 8,
+    "smollm2-360m-instruct": 3
+  },
+  "Ruby Best Practices": {
+    "mistral-nemo-instruct-2407": 9,
+    "nuprl_-_multipl-t-starcoderbase_1b": 5,
+    "qwen2.5-coder-7b-instruct": 8,
+    "smollm2-360m-instruct": 6
+  },
+  "Advanced Ruby Features": {
+    "mistral-nemo-instruct-2407": 9,
+    "nuprl_-_multipl-t-starcoderbase_1b": 2,
+    "qwen2.5-coder-7b-instruct": 8,
+    "smollm2-360m-instruct": 4
+  },
+  "metadata": {
+    "evaluation_criteria": {
+      "scoring_scale": {
+        "9-10": "Production-ready, comprehensive response",
+        "7-8": "Good understanding with minor issues",
+        "5-6": "Basic understanding with some gaps",
+        "3-4": "Significant misunderstandings",
+        "1-2": "Major conceptual errors"
+      },
+      "aspects_evaluated": [
+        "Technical accuracy",
+        "Completeness of explanation",
+        "Code correctness and style",
+        "Use of Ruby idioms",
+        "Error handling and edge cases"
+      ]
+    },
+    "model_details": {
+      "mistral-nemo-instruct-2407": {
+        "size": "6.91 GB",
+        "type": "Large instruction-following model",
+        "average_score": 9.0,
+        "consistency_score": 9.0
+      },
+      "nuprl_-_multipl-t-starcoderbase_1b": {
+        "size": "726.93 MB",
+        "type": "Programming-focused lightweight model",
+        "average_score": 3.6,
+        "consistency_score": 4.0
+      },
+      "qwen2.5-coder-7b-instruct": {
+        "size": "8.10 GB",
+        "type": "Large programming-focused model",
+        "average_score": 8.0,
+        "consistency_score": 8.5
+      },
+      "smollm2-360m-instruct": {
+        "size": "728.49 MB",
+        "type": "Lightweight instruction model",
+        "average_score": 4.8,
+        "consistency_score": 5.0
+      }
+    },
+    "evaluation_timestamp": "2024-11-07T01:00:00Z",
+    "evaluation_version": "1.0"
+  }
+}
